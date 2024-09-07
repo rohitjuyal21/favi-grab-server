@@ -9,7 +9,11 @@ dotenv.config({
 });
 
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://favi-grab.vercel.app",
+  })
+);
 
 const GOOGLE_FAVICON_URL = "https://www.google.com/s2/favicons";
 const DUCK_DUCK_GO_FAVICON_URL = "https://icons.duckduckgo.com/ip3/";
