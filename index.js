@@ -11,7 +11,7 @@ dotenv.config({
 const app = express();
 app.use(
   cors({
-    origin: "https://favi-grab.vercel.app",
+    origin: process.env.FRONTEND_URL,
   })
 );
 
@@ -26,7 +26,6 @@ async function fetchIcon(url, source) {
   try {
     const response = await axios.get(url, {
       responseType: "arraybuffer",
-      timeout: 5000,
       httpsAgent: agent,
     });
 
